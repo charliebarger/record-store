@@ -1,0 +1,26 @@
+.btn:focus,
+a:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.square-container {
+  padding-bottom: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.square-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.square-img img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
