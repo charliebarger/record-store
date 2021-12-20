@@ -7,6 +7,8 @@ var logger = require("morgan");
 var indexRouter = require("./server/routes/index");
 var usersRouter = require("./server/routes/users");
 
+let newCategoryRouter = require("./server/routes/newCategory");
+
 var app = express();
 
 // view engine setup
@@ -20,6 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/new-category", newCategoryRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
