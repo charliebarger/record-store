@@ -10,8 +10,6 @@ let newCategoryRouter = require("./server/routes/newCategory");
 
 let newItemRouter = require("./server/routes/newItem");
 
-let newCategoryRouter = require("./server/routes/newCategory");
-
 var app = express();
 
 // view engine setup
