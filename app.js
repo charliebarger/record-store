@@ -10,6 +10,8 @@ let newCategoryRouter = require("./server/routes/newCategory");
 
 let newItemRouter = require("./server/routes/newItem");
 
+let detailRouter = require("./server/routes/detail");
+
 var app = express();
 
 // view engine setup
@@ -27,6 +29,7 @@ app.use("/new-category", newCategoryRouter);
 app.use("/users", usersRouter);
 app.use("/new-category", newCategoryRouter);
 app.use("/new-item", newItemRouter);
+app.use("/item", detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -41,7 +44,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  res.render("error", { title: "Express" });
 });
 
 module.exports = app;
