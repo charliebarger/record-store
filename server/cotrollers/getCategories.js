@@ -1,6 +1,7 @@
 require("../models/database");
 const Category = require("../models/Catagory");
 const Records = require("../models/Records");
+const ObjectId = require("mongodb").ObjectId;
 
 exports.getCategory = async () => {
   try {
@@ -17,5 +18,16 @@ exports.getRecords = async () => {
     return records;
   } catch (error) {
     console.log("mistake in getRecords");
+  }
+};
+
+exports.getRecordsbyId = async (paramId) => {
+  try {
+    const records = await Records.find({
+      category: ObjectId(paramId),
+    });
+    return records;
+  } catch (error) {
+    console.log("mistake in getRecordsbyId");
   }
 };

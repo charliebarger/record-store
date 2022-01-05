@@ -7,7 +7,7 @@
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body class="p-0 d-md-flex">
@@ -25,7 +25,8 @@
                 aria-orientation="vertical">
                 <% if (category !="" ) { %>
                     <% category.forEach((item)=> { %>
-                        <a href="#" class="nav-link active btn mt-3" id="v-pills-home-tab" type="button" role="tab"
+                        <a href=<%=`/category/${item._id}` %>
+                            class="nav-link active btn mt-3" id="v-pills-home-tab" type="button" role="tab"
                             aria-controls="v-pills-home" aria-selected="true">
                             <%= item.name %>
                         </a>
