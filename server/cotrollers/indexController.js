@@ -1,4 +1,5 @@
 const getCategories = require("./getCategories");
+const Records = require("../models/Records");
 /**
  * Get
  * Homepage
@@ -6,7 +7,9 @@ const getCategories = require("./getCategories");
 exports.homePage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
-    res.render("index", { title: "Express", category });
+    const records = await getCategories.getRecords();
+    console.log(records);
+    res.render("index", { title: "Express", category, records });
   } catch (error) {
     res.status(500);
   }
