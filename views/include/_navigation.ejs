@@ -14,25 +14,28 @@
 
     <header class="bg-dark p-5 min-vh-100">
         <div class="text-center mb-3">
-            <i class="fas fa-record-vinyl text-light fs-1"></i>
-            <span class="text-light fs-1">Record Store</span>
+            <a href="/" class="text-decoration-none">
+                <i class="fas fa-record-vinyl text-light fs-1"></i>
+                <span class="text-light fs-1">Record Store</span>
+            </a>
         </div>
         <span class="text-light fs-3 text-center d-block">Categories</span>
         <nav>
             <div class=" pb-4 pt-2 nav flex-column nav-pills " id="v-pills-tab" role="tablist"
                 aria-orientation="vertical">
-                <a href="#" class="nav-link active btn" id="v-pills-home-tab" type="button" role="tab"
-                    aria-controls="v-pills-home" aria-selected="true">Home</a>
-                <a href="#" class="nav-link  btn" id="v-pills-home-tab" type="button" role="tab"
-                    aria-controls="v-pills-home" aria-selected="true">Home</a>
-                <a href="#" class="nav-link  btn" id="v-pills-home-tab" type="button" role="tab"
-                    aria-controls="v-pills-home" aria-selected="true">Home</a>
-                <a href="#" class="nav-link  btn" id="v-pills-home-tab" type="button" role="tab"
-                    aria-controls="v-pills-home" aria-selected="true">Home</a>
+                <% if (category !="" ) { %>
+                    <% category.forEach((item)=> { %>
+                        <a href="#" class="nav-link active btn mt-3" id="v-pills-home-tab" type="button" role="tab"
+                            aria-controls="v-pills-home" aria-selected="true">
+                            <%= item.name %>
+                        </a>
+                        <% }) %>
+                            <% } %>
             </div>
             <div class="container d-flex  align-items-center gap-4 gap-md-3 px-0 flex-md-column">
-                <a style="width : 100%" class="btn btn-danger btn-md flex-fill px-0" href="#">New Category</a>
-                <a style="width : 100%" class="btn btn-danger btn-md flex-fill px-0" href="#">New Item</a>
+                <a style="width : 100%" class="btn btn-danger btn-md flex-fill px-0" href="/new-category">New
+                    Category</a>
+                <a style="width : 100%" class="btn btn-danger btn-md flex-fill px-0" href="/new-item">New Item</a>
             </div>
         </nav>
     </header>
