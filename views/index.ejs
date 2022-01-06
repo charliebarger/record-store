@@ -2,7 +2,12 @@
   <main class="flex-grow-1 " style="overflow-y: scroll; height:100vh;">
     <div class="container p-4">
 
-      <h1>All Records</h1>
+      <h1>
+        <%= selectedCategory.name %>
+      </h1>
+      <h2 class="fs-5 fw-light">
+        <%= selectedCategory.description %>
+      </h2>
       <% if (records !="" ) { %>
         <% records.forEach((item)=> { %>
           <div class="card mb-3 mx-auto my-4 shadow" style="max-width: 540px;">

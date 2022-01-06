@@ -9,7 +9,12 @@ exports.homePage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
     const records = await getCategories.getRecords();
-    res.render("index", { title: "Express", category, records });
+    res.render("index", {
+      title: "Express",
+      category,
+      records,
+      selectedCategory: { name: "All Items" },
+    });
   } catch (error) {
     res.status(500);
   }
@@ -18,8 +23,17 @@ exports.homePage = async (req, res, next) => {
 exports.catagoryPage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
+    const selectedCategory = await getCategories.getSelectedCategory(
+      req.params.id
+    );
+    console.log(selectedCategory);
     const records = await getCategories.getRecordsbyId(req.params.id);
-    res.render("index", { title: "Express", category, records });
+    res.render("index", {
+      title: "Express",
+      category,
+      records,
+      selectedCategory,
+    });
   } catch (error) {
     res.status(500);
   }

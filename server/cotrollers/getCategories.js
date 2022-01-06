@@ -31,3 +31,14 @@ exports.getRecordsbyId = async (paramId) => {
     console.log("mistake in getRecordsbyId");
   }
 };
+
+exports.getSelectedCategory = async (paramId) => {
+  try {
+    const category = await Category.findOne({
+      _id: ObjectId(paramId),
+    });
+    return category;
+  } catch (error) {
+    console.log("mistake in getRecordsbyId");
+  }
+};
