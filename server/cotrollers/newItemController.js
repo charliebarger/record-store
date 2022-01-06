@@ -13,14 +13,17 @@ exports.newItemHomepage = async (req, res, next) => {
 exports.create = async (req, res) => {
   try {
     //new user
-    console.log(req.body);
+    const category = await getCategories.getSelectedCategory(req.body.category);
     const user = await new Userdb({
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
       quantity: req.body.quantity,
-      category: req.body.category,
+      image: "hi",
+      categoryId: category._id,
+      categoryName: category.name,
     });
+    console.log(user);
     //save data
     await Userdb.create(user);
     res.redirect("/");

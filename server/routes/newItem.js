@@ -4,5 +4,6 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", itemFormController.newItemHomepage);
+router.post("/", itemFormController.create);
 
 module.exports = router;

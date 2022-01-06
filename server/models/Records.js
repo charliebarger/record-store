@@ -21,9 +21,13 @@ const recordSchema = new mongoose.Schema({
     type: String,
     required: "this field is required",
   },
-  category: {
+  categoryId: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: "categories",
+    required: "this field is required",
+  },
+  categoryName: {
+    type: String,
     required: "this field is required",
   },
 });
