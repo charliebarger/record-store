@@ -14,13 +14,13 @@
             <div class="row g-0">
               <div class="col-md-8">
                 <div class="card-body">
-                  <a class="text-decoration-none text-dark" href="">
+                  <a class="text-decoration-none text-dark" href=<%=`/item/${item._id}` %>>
                     <h5 class="card-title">
-                      <%= item.name %>
+                      <%= item.albumName %>
                     </h5>
                   </a>
                   <p class="card-text mb-2">
-                    <%= item.description %>
+                    <%= item.artistName %>
                   </p>
                   <p class="card-text mb-1"><small class="text-danger">
                       $<%= item.price %>
@@ -28,8 +28,9 @@
                   <p class="card-text mb-1"><small class="text-muted">
                       <%= item.quantity%> in stock
                     </small></p>
-                  <a class="card-text mb-1 btn btn-sm btn btn-outline-success mt-1">
-                    <%= item.category %>
+                  <a href=<%=`/category/${item.categoryId}` %> class="card-text mb-1 btn btn-sm btn btn-outline-success
+                    mt-1">
+                    <%= item.categoryName %>
                   </a>
                 </div>
               </div>

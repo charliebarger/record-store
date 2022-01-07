@@ -15,11 +15,12 @@ exports.create = async (req, res) => {
     //new user
     const category = await getCategories.getSelectedCategory(req.body.category);
     const user = await new Userdb({
-      name: req.body.name,
+      albumName: req.body.albumName,
+      artistName: req.body.artistName,
       description: req.body.description,
       price: req.body.price,
       quantity: req.body.quantity,
-      image: "hi",
+      image: req.body.image,
       categoryId: category._id,
       categoryName: category.name,
     });

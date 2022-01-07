@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const recordSchema = new mongoose.Schema({
-  name: {
+  albumName: {
+    type: String,
+    required: "this field is required",
+  },
+  artistName: {
     type: String,
     required: "this field is required",
   },

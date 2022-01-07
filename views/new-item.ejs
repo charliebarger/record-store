@@ -1,15 +1,20 @@
 <%- include("include/_navigation") -%>
     <main class=" flex-grow-1 ">
         <div class="container p-4">
-            <h1>New Item</h1>
+            <h1>New Record</h1>
             <form method="post" action="/new-item" style="max-width:450px;">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Item Name</label>
-                    <input required class="form-control" id="exampleInputEmail1" name="name"
+                    <label for="exampleInputEmail1" class="form-label">Album Name</label>
+                    <input required class="form-control" id="exampleInputEmail1" name="albumName"
                         aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Item Description</label>
+                    <label for="exampleInputEmail1" class="form-label">Artist Name</label>
+                    <input required class="form-control" id="exampleInputEmail1" name="artistName"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Description</label>
                     <textarea style="width: 100%" required rows="3" name="description" class="form-control" name=""
                         id=""></textarea>
                 </div>
@@ -22,6 +27,11 @@
                     <label for="exampleInputPassword1" class="form-label">Item Quantity</label>
                     <input type="number" name="quantity" style="width: 100%" required rows="3" class="form-control"
                         name="" id=""></input>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Album Cover URL</label>
+                    <input required class="form-control" id="exampleInputEmail1" name="image"
+                        aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Category</label>

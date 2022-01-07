@@ -32,6 +32,17 @@ exports.getRecordsbyId = async (paramId) => {
   }
 };
 
+exports.getRecordbyId = async (paramId) => {
+  try {
+    const record = await Records.findOne({
+      _id: ObjectId(paramId),
+    });
+    return record;
+  } catch (error) {
+    console.log("mistake in getRecordsbyId");
+  }
+};
+
 exports.getSelectedCategory = async (paramId) => {
   try {
     const category = await Category.findOne({
