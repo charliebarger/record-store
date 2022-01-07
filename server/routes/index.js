@@ -8,6 +8,6 @@ router.get("/", indexController.homePage);
 router.get("/category", indexController.homePage);
 router.get("/category/:id", indexController.catagoryPage);
 router.get("/update-item/:id", itemController.updateItemPage);
-router.get;
+router.post("/update-item/:id", itemController.updateItem);
 
 module.exports = router;

@@ -9,6 +9,7 @@ exports.newItemHomepage = async (req, res, next) => {
       category,
       selectedCategory: { name: "" },
       record: "",
+      http: "post",
     });
   } catch (error) {
     res.status(500);
@@ -17,6 +18,7 @@ exports.newItemHomepage = async (req, res, next) => {
 
 exports.updateItemPage = async (req, res, next) => {
   try {
+    console.log("render update");
     const category = await getCategories.getCategory();
     const record = await getCategories.getRecordbyId(req.params.id);
     res.render("new-item", {
@@ -24,6 +26,7 @@ exports.updateItemPage = async (req, res, next) => {
       category,
       selectedCategory: { name: "" },
       record,
+      http: "put",
     });
   } catch (error) {
     res.status(500);
@@ -33,6 +36,7 @@ exports.updateItemPage = async (req, res, next) => {
 exports.create = async (req, res) => {
   try {
     //new user
+    console.log("went to create");
     const category = await getCategories.getSelectedCategory(req.body.category);
     const user = await new Userdb({
       albumName: req.body.albumName,
@@ -44,11 +48,17 @@ exports.create = async (req, res) => {
       categoryId: category._id,
       categoryName: category.name,
     });
-    console.log(user);
     //save data
     await Userdb.create(user);
     res.redirect("/");
   } catch (error) {
     res.status(400).send({ message: "content cannot be empty" });
   }
+};
+
+exports.updateItem = async (req, res, next) => {
+  try {
+    await getCategories.updateItem(req.params.id, req.body);
+    res.redirect(`/item/${req.params.id}`);
+  } catch (error) {}
 };
