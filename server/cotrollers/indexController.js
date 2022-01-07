@@ -9,11 +9,12 @@ exports.homePage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
     const records = await getCategories.getRecords();
+    console.log("here");
     res.render("index", {
       title: "Express",
       category,
       records,
-      selectedCategory: { name: "All Items" },
+      selectedCategory: { name: "all items", _id: "" },
     });
   } catch (error) {
     res.status(500);
@@ -26,7 +27,8 @@ exports.catagoryPage = async (req, res, next) => {
     const selectedCategory = await getCategories.getSelectedCategory(
       req.params.id
     );
-    console.log(selectedCategory);
+    console.log(selectedCategory._id);
+    console.log(category[0]._id.equals(selectedCategory._id));
     const records = await getCategories.getRecordsbyId(req.params.id);
     res.render("index", {
       title: "Express",
