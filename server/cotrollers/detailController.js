@@ -9,6 +9,7 @@ exports.detailPage = async (req, res, next) => {
       title: "Record Store",
       category,
       record,
+      selectedCategory: { name: "" },
     });
   } catch (error) {
     res.status(500);

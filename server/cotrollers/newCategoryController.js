@@ -5,7 +5,11 @@ require("../models/database");
 exports.newCategoryHomepage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
-    res.render("new-category", { title: "Record Store", category });
+    res.render("new-category", {
+      title: "Record Store",
+      category,
+      selectedCategory: { name: "" },
+    });
   } catch (error) {
     res.status(500);
   }

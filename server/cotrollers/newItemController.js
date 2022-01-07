@@ -4,7 +4,27 @@ require("../models/database");
 exports.newItemHomepage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
-    res.render("new-item", { title: "Record Store", category });
+    res.render("new-item", {
+      title: "Record Store",
+      category,
+      selectedCategory: { name: "" },
+      record: "",
+    });
+  } catch (error) {
+    res.status(500);
+  }
+};
+
+exports.updateItemPage = async (req, res, next) => {
+  try {
+    const category = await getCategories.getCategory();
+    const record = await getCategories.getRecordbyId(req.params.id);
+    res.render("new-item", {
+      title: "Record Store",
+      category,
+      selectedCategory: { name: "" },
+      record,
+    });
   } catch (error) {
     res.status(500);
   }

@@ -27,9 +27,8 @@ exports.catagoryPage = async (req, res, next) => {
     const selectedCategory = await getCategories.getSelectedCategory(
       req.params.id
     );
-    console.log(selectedCategory._id);
-    console.log(category[0]._id.equals(selectedCategory._id));
     const records = await getCategories.getRecordsbyId(req.params.id);
+    console.log(req.params.id);
     res.render("index", {
       title: "Express",
       category,

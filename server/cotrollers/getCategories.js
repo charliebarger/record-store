@@ -24,7 +24,7 @@ exports.getRecords = async () => {
 exports.getRecordsbyId = async (paramId) => {
   try {
     const records = await Records.find({
-      category: ObjectId(paramId),
+      categoryId: ObjectId(paramId),
     });
     return records;
   } catch (error) {
