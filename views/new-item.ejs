@@ -45,8 +45,8 @@
                         <% if (category !="" ) { %>
                             <% category.forEach((item)=> { %>
                                 <option value=<%=`${item._id}` %>
-                                    <% if(record){%>
-                                        <%= record.categoryId.equals(item._id) ? "selected" : '' %>
+                                    <% if(selected){%>
+                                        <%= selected.equals(item._id) ? "selected" : '' %>
                                             <%}%>
                                                 >
                                                 <%= item.name %>

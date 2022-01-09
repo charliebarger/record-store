@@ -1,5 +1,6 @@
 const getCategories = require("./getCategories");
 const Userdb = require("../models/Records");
+const { ObjectId } = require("mongodb");
 require("../models/database");
 exports.newItemHomepage = async (req, res, next) => {
   try {
@@ -9,6 +10,7 @@ exports.newItemHomepage = async (req, res, next) => {
       category,
       selectedCategory: { name: "" },
       record: "",
+      selected: "",
       http: "post",
     });
   } catch (error) {
@@ -25,6 +27,27 @@ exports.updateItemPage = async (req, res, next) => {
       category,
       selectedCategory: { name: "" },
       record,
+      selected: ObjectId(record.categoryId),
+      http: "put",
+    });
+  } catch (error) {
+    res.status(500);
+  }
+};
+
+exports.addItemToGenre = async (req, res, next) => {
+  try {
+    console.log("hereee");
+    const category = await getCategories.getCategory();
+    const selectedCategory = await getCategories.getSelectedCategory(
+      req.params.id
+    );
+    res.render("new-item", {
+      title: "Record Store",
+      category,
+      selectedCategory: { name: "" },
+      record: "",
+      selected: ObjectId(selectedCategory._id),
       http: "put",
     });
   } catch (error) {
