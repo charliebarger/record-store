@@ -18,7 +18,6 @@ exports.newItemHomepage = async (req, res, next) => {
 
 exports.updateItemPage = async (req, res, next) => {
   try {
-    console.log("render update");
     const category = await getCategories.getCategory();
     const record = await getCategories.getRecordbyId(req.params.id);
     res.render("new-item", {
@@ -36,7 +35,6 @@ exports.updateItemPage = async (req, res, next) => {
 exports.create = async (req, res) => {
   try {
     //new user
-    console.log("went to create");
     const category = await getCategories.getSelectedCategory(req.body.category);
     const user = await new Userdb({
       albumName: req.body.albumName,
@@ -58,7 +56,20 @@ exports.create = async (req, res) => {
 
 exports.updateItem = async (req, res, next) => {
   try {
-    await getCategories.updateItem(req.params.id, req.body);
+    const category = await getCategories.getSelectedCategory(req.body.category);
+    const updatedRecord = {
+      categoryId: category._id,
+      categoryName: category.name,
+      ...req.body,
+    };
+    await getCategories.updateItem(req.params.id, updatedRecord);
     res.redirect(`/item/${req.params.id}`);
+  } catch (error) {}
+};
+
+exports.deleteItem = async (req, res, next) => {
+  try {
+    await getCategories.delete(req.params.id);
+    res.redirect(`/`);
   } catch (error) {}
 };

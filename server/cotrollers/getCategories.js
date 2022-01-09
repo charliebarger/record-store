@@ -37,7 +37,6 @@ exports.getRecordbyId = async (paramId) => {
     const record = await Records.findOne({
       _id: ObjectId(paramId),
     });
-    console.log(record);
     return record;
   } catch (error) {
     console.log("mistake in getRecordsbyId");
@@ -46,6 +45,7 @@ exports.getRecordbyId = async (paramId) => {
 
 exports.getSelectedCategory = async (paramId) => {
   try {
+    console.log(paramId);
     const category = await Category.findOne({
       _id: ObjectId(paramId),
     });
@@ -57,8 +57,21 @@ exports.getSelectedCategory = async (paramId) => {
 
 exports.updateItem = async (paramId, newRecord) => {
   try {
+    const category = await Category.findOne({
+      _id: ObjectId(newRecord.category),
+    });
+    console.log(category);
     await Records.findByIdAndUpdate(ObjectId(paramId), { $set: newRecord });
   } catch (error) {
     console.log("mistake in updateItem");
+  }
+};
+
+exports.delete = async (paramId) => {
+  try {
+    console.log(paramId);
+    await Records.findByIdAndDelete(paramId);
+  } catch (error) {
+    console.log("mistake in deleteItem");
   }
 };

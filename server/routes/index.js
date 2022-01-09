@@ -9,5 +9,6 @@ router.get("/category", indexController.homePage);
 router.get("/category/:id", indexController.catagoryPage);
 router.get("/update-item/:id", itemController.updateItemPage);
 router.post("/update-item/:id", itemController.updateItem);
+router.get("/delete/:id", itemController.deleteItem);
 
 module.exports = router;

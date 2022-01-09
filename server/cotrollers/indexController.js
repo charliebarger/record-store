@@ -9,7 +9,7 @@ exports.homePage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
     const records = await getCategories.getRecords();
-    console.log("here");
+
     res.render("index", {
       title: "Express",
       category,
@@ -28,7 +28,6 @@ exports.catagoryPage = async (req, res, next) => {
       req.params.id
     );
     const records = await getCategories.getRecordsbyId(req.params.id);
-    console.log(req.params.id);
     res.render("index", {
       title: "Express",
       category,

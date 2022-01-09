@@ -18,12 +18,10 @@ exports.newCategoryHomepage = async (req, res, next) => {
 exports.create = async (req, res) => {
   try {
     //new user
-    console.log(req.body);
     const user = await new Userdb({
       name: req.body.name,
       description: req.body.description,
     });
-    console.log(user);
     //save data
     await Userdb.create(user);
     res.redirect("/");
