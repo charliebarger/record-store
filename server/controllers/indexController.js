@@ -11,7 +11,7 @@ exports.homePage = async (req, res, next) => {
     const records = await getCategories.getRecords();
 
     res.render("index", {
-      title: "Express",
+      title: "Record Store",
       category,
       records,
       selectedCategory: { name: "all records", _id: "" },
@@ -34,7 +34,7 @@ exports.catagoryPage = async (req, res, next) => {
     );
     const records = await getCategories.getRecordsbyId(req.params.id);
     res.render("index", {
-      title: "Express",
+      title: "Record Store",
       category,
       records,
       selectedCategory,
