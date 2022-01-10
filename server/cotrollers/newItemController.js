@@ -85,7 +85,7 @@ exports.updateItem = async (req, res, next) => {
       ...req.body,
     };
     await getCategories.updateItem(req.params.id, updatedRecord);
-    res.redirect(`/item/${req.params.id}`);
+    res.redirect(`/record/${req.params.id}`);
   } catch (error) {}
 };
 

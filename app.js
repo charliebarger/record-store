@@ -10,7 +10,7 @@ let newCategoryRouter = require("./server/routes/newGenre");
 
 let newItemRouter = require("./server/routes/newRecord");
 
-let detailRouter = require("./server/routes/itemDetail");
+let detailRouter = require("./server/routes/recordDetail");
 
 var app = express();
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/new-genre", newCategoryRouter);
 app.use("/new-record", newItemRouter);
-app.use("/item", detailRouter);
+app.use("/record", detailRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
