@@ -23,11 +23,11 @@
         </div>
         <span class="text-light fs-3 text-center d-block">Genres</span>
         <nav>
-            <div class=" pb-4 pt-2 nav flex-column nav-pills px-2" id="v-pills-tab" role="tablist"
-                style="overflow-y: scroll; max-height:300px; flex-wrap: nowrap;" aria-orientation="vertical">
+            <div class=" pb-4 pt-2 nav flex-column nav-pills px-2"
+                style="overflow-y: scroll; max-height:300px; flex-wrap: nowrap;">
                 <a href='/category'
                     class=" <%= selectedCategory.name === 'all records' ? 'active' : '' %> nav-link btn mt-3 text-capitalize"
-                    id="v-pills-home-tab" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    type="button">
                     All Records
                 </a>
                 <% if (category !="" ) { %>
@@ -39,8 +39,8 @@
                                     <% }%>
                                         text-capitalize
                                         nav-link btn mt-3"
-                                        id="v-pills-home-tab" type="button" role="tab"
-                                        aria-controls="v-pills-home" aria-selected="true">
+                                        type="button"
+                                        >
                                         <%= item.name %>
                         </a>
                         <% }) %>
