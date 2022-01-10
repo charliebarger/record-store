@@ -45,10 +45,10 @@ exports.addItemToGenre = async (req, res, next) => {
     res.render("new-item", {
       title: "Record Store",
       category,
-      selectedCategory: { name: "" },
+      selectedCategory,
       record: "",
       selected: ObjectId(selectedCategory._id),
-      http: "put",
+      http: "post",
     });
   } catch (error) {
     res.status(500);
@@ -71,7 +71,7 @@ exports.create = async (req, res) => {
     });
     //save data
     await Userdb.create(user);
-    res.redirect("/");
+    res.redirect(`/category/${req.body.category}`);
   } catch (error) {
     res.status(400).send({ message: "content cannot be empty" });
   }
@@ -93,6 +93,6 @@ exports.updateItem = async (req, res, next) => {
 exports.deleteItem = async (req, res, next) => {
   try {
     await getCategories.delete(req.params.id);
-    res.redirect(`/`);
+    res.redirect(`/category/${req.params.categoryId}`);
   } catch (error) {}
 };
