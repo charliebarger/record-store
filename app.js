@@ -6,9 +6,9 @@ var logger = require("morgan");
 require("dotenv").config();
 
 var indexRouter = require("./server/routes/index");
-let newCategoryRouter = require("./server/routes/newCategory");
+let newCategoryRouter = require("./server/routes/newGenre");
 
-let newItemRouter = require("./server/routes/newGenre");
+let newItemRouter = require("./server/routes/newRecord");
 
 let detailRouter = require("./server/routes/itemDetail");
 

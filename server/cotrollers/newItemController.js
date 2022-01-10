@@ -37,7 +37,6 @@ exports.updateItemPage = async (req, res, next) => {
 
 exports.addItemToGenre = async (req, res, next) => {
   try {
-    console.log("hereee");
     const category = await getCategories.getCategory();
     const selectedCategory = await getCategories.getSelectedCategory(
       req.params.id

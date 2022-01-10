@@ -1,10 +1,9 @@
 var express = require("express");
-const itemFormController = require("../cotrollers/newItemController");
+const categoryFormController = require("../cotrollers/newCategoryController");
 var router = express.Router();
 
-/* GET home page. */
-router.get("/", itemFormController.newItemHomepage);
-router.get("/:id", itemFormController.addItemToGenre);
-router.post("/", itemFormController.create);
-
+/* GET new genre page. */
+router.get("/", categoryFormController.newCategoryHomepage);
+/* Post a new genre to the db */
+router.post("/", categoryFormController.create);
 module.exports = router;
