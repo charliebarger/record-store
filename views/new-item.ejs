@@ -4,7 +4,7 @@
             <h1>
                 <%= record ? "Update Record" : 'New Record' %>
             </h1>
-            <form method="post" action=<%=http==="post" ? "/new-item" : `/update-item/${record._id}` %>
+            <form method="post" action=<%=http==="post" ? "/new-record" : `/update-item/${record._id}` %>
                 style="max-width:450px;">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Album Name</label>
