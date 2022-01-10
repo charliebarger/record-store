@@ -1,5 +1,9 @@
-const getCategories = require("./getCategories");
+const getCategories = require("./helperController");
 
+/**
+ * Get
+ * Record Detail Page
+ */
 exports.detailPage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();

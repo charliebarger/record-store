@@ -3,6 +3,10 @@ const Category = require("../models/Catagory");
 const Records = require("../models/Records");
 const ObjectId = require("mongodb").ObjectId;
 
+/**
+ * Get
+ * get all categories from DB
+ */
 exports.getCategory = async () => {
   try {
     const categories = await Category.find({});
@@ -12,6 +16,10 @@ exports.getCategory = async () => {
   }
 };
 
+/**
+ * Get
+ * get all records from DB
+ */
 exports.getRecords = async () => {
   try {
     const records = await Records.find({}).sort({ _id: -1 });
@@ -21,6 +29,10 @@ exports.getRecords = async () => {
   }
 };
 
+/**
+ * Get
+ * get all records from DB with the same category Id
+ */
 exports.getRecordsbyId = async (paramId) => {
   try {
     const records = await Records.find({
@@ -32,6 +44,10 @@ exports.getRecordsbyId = async (paramId) => {
   }
 };
 
+/**
+ * Get
+ * get a single record from the form by its ID
+ */
 exports.getRecordbyId = async (paramId) => {
   try {
     const record = await Records.findOne({
@@ -43,6 +59,10 @@ exports.getRecordbyId = async (paramId) => {
   }
 };
 
+/**
+ * Get
+ * get selected category by id and return the category
+ */
 exports.getSelectedCategory = async (paramId) => {
   try {
     console.log(paramId);
@@ -55,6 +75,10 @@ exports.getSelectedCategory = async (paramId) => {
   }
 };
 
+/**
+ * Put
+ * update record
+ */
 exports.updateItem = async (paramId, newRecord) => {
   try {
     const category = await Category.findOne({
@@ -67,6 +91,10 @@ exports.updateItem = async (paramId, newRecord) => {
   }
 };
 
+/**
+ * delete
+ * delete record
+ */
 exports.delete = async (paramId) => {
   try {
     console.log(paramId);
@@ -76,6 +104,10 @@ exports.delete = async (paramId) => {
   }
 };
 
+/**
+ * Put
+ * update category
+ */
 exports.updateCategory = async (paramId, newRecord) => {
   try {
     await Category.findByIdAndUpdate(ObjectId(paramId), { $set: newRecord });
@@ -84,6 +116,10 @@ exports.updateCategory = async (paramId, newRecord) => {
   }
 };
 
+/**
+ * delete
+ * delete category
+ */
 exports.deleteCategory = async (paramId) => {
   try {
     await Category.findByIdAndDelete(paramId);

@@ -1,4 +1,4 @@
-const getCategories = require("./getCategories");
+const getCategories = require("./helperController");
 const Records = require("../models/Records");
 const ObjectId = require("mongodb").ObjectId;
 /**
@@ -14,7 +14,7 @@ exports.homePage = async (req, res, next) => {
       title: "Express",
       category,
       records,
-      selectedCategory: { name: "all items", _id: "" },
+      selectedCategory: { name: "all records", _id: "" },
     });
   } catch (error) {
     res.status(500);

@@ -1,7 +1,11 @@
-const getCategories = require("./getCategories");
+const getCategories = require("./helperController");
 const Userdb = require("../models/Catagory");
 require("../models/database");
 
+/**
+ * Get
+ * New Genre Form Page
+ */
 exports.newCategoryHomepage = async (req, res, next) => {
   try {
     console.log("hehehhehe");
@@ -16,6 +20,10 @@ exports.newCategoryHomepage = async (req, res, next) => {
   }
 };
 
+/**
+ * Post
+ * create a new Genre
+ */
 exports.create = async (req, res) => {
   try {
     //new user
@@ -33,6 +41,10 @@ exports.create = async (req, res) => {
   }
 };
 
+/**
+ * Get
+ * update category page
+ */
 exports.updateCategoryPage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
@@ -51,6 +63,10 @@ exports.updateCategoryPage = async (req, res, next) => {
   }
 };
 
+/**
+ * Put
+ * update genre in the db
+ */
 exports.updateCategory = async (req, res, next) => {
   try {
     await getCategories.updateCategory(req.params.id, req.body);
@@ -58,6 +74,10 @@ exports.updateCategory = async (req, res, next) => {
   } catch (error) {}
 };
 
+/**
+ * delete
+ * delete genre in db
+ */
 exports.delete = async (req, res, next) => {
   try {
     await getCategories.deleteCategory(req.params.id);

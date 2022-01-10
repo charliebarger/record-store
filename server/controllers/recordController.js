@@ -1,4 +1,4 @@
-const getCategories = require("./getCategories");
+const getCategories = require("./helperController");
 const Userdb = require("../models/Records");
 const { ObjectId } = require("mongodb");
 require("../models/database");
