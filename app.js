@@ -6,10 +6,9 @@ var logger = require("morgan");
 require("dotenv").config();
 
 var indexRouter = require("./server/routes/index");
-var usersRouter = require("./server/routes/users");
 let newCategoryRouter = require("./server/routes/newCategory");
 
-let newItemRouter = require("./server/routes/newItem");
+let newItemRouter = require("./server/routes/newGenre");
 
 let detailRouter = require("./server/routes/itemDetail");
 
@@ -26,8 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/new-category", newCategoryRouter);
-app.use("/users", usersRouter);
+app.use("/new-genre", newCategoryRouter);
 app.use("/new-item", newItemRouter);
 app.use("/item", detailRouter);
 

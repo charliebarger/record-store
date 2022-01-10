@@ -4,7 +4,7 @@
             <h1>
                 <%= selectedCategory.name !="" ? 'Update Genre' : "New Genre" %>
             </h1>
-            <form style="max-width:450px;" method="post" action=<%=selectedCategory.name=="" ? "/new-category" :
+            <form style="max-width:450px;" method="post" action=<%=selectedCategory.name=="" ? "/new-genre" :
                 `/update-category/${selectedCategory._id}` %>
                 >
                 <div class="mb-3">
