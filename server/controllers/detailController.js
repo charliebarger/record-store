@@ -16,5 +16,6 @@ exports.detailPage = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };

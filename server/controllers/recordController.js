@@ -21,6 +21,7 @@ exports.newItemHomepage = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };
 
@@ -43,6 +44,7 @@ exports.updateItemPage = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };
 
@@ -67,6 +69,7 @@ exports.addItemToGenre = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };
 
@@ -112,7 +115,9 @@ exports.updateItem = async (req, res, next) => {
     };
     await getCategories.updateItem(req.params.id, updatedRecord);
     res.redirect(`/record/${req.params.id}`);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 /**
@@ -124,5 +129,7 @@ exports.deleteItem = async (req, res, next) => {
   try {
     await getCategories.delete(req.params.id);
     res.redirect(`/category/${req.params.categoryId}`);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };

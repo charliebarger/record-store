@@ -17,6 +17,7 @@ exports.newCategoryHomepage = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };
 
@@ -32,8 +33,7 @@ exports.create = async (req, res) => {
       description: req.body.description,
     });
     //save data
-
-    const categoryId = await Userdb.create(user);
+    await Userdb.create(user);
 
     res.redirect(`/category/${user._id}`);
   } catch (error) {
@@ -59,7 +59,7 @@ exports.updateCategoryPage = async (req, res, next) => {
       selectedCategory: selectedCategory,
     });
   } catch (error) {
-    console.log("failed");
+    console.log(error);
   }
 };
 
@@ -71,7 +71,9 @@ exports.updateCategory = async (req, res, next) => {
   try {
     await getCategories.updateCategory(req.params.id, req.body);
     res.redirect(`/category/${req.params.id}`);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 /**
@@ -82,5 +84,7 @@ exports.delete = async (req, res, next) => {
   try {
     await getCategories.deleteCategory(req.params.id);
     res.redirect(`/`);
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };

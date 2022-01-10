@@ -18,6 +18,7 @@ exports.homePage = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };
 
@@ -41,5 +42,6 @@ exports.catagoryPage = async (req, res, next) => {
     });
   } catch (error) {
     res.status(500);
+    console.log(error);
   }
 };
