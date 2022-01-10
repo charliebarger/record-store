@@ -30,7 +30,8 @@
                   <p class="card-text mb-1"><small class="text-muted">
                       <%= item.quantity%> in stock
                     </small></p>
-                  <a href=<%=`/category/${item.categoryId}` %> class="card-text mb-1 btn btn-sm btn btn-outline-success
+                  <a href=<%=`/category/${item.categoryId}` %> class="card-text mb-1 btn btn-sm btn
+                    btn-outline-success
                     text-capitalize
                     mt-1">
                     <%= item.categoryName %>
@@ -38,12 +39,12 @@
                 </div>
               </div>
               <div class="col-md-4 d-flex p-3 align-items-center">
-                <div class="square-container">
+                <a class="text-decoration-none text-dark square-container" href=<%=`/item/${item._id}` %>>
                   <div class="square-img">
                     <img src=<%=item.image %> class="" alt="
                     ...">
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
