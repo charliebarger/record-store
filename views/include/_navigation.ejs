@@ -23,10 +23,10 @@
         </div>
         <span class="text-light fs-3 text-center d-block">Genres</span>
         <nav>
-            <div class=" pb-4 pt-2 nav flex-column nav-pills px-2"
+            <div class=" pb-4 pt-2 nav flex-column  px-2"
                 style="overflow-y: scroll; max-height:300px; flex-wrap: nowrap;">
                 <a href='/category'
-                    class=" <%= selectedCategory.name === 'all records' ? 'active' : '' %> nav-link btn mt-3 text-capitalize"
+                    class=" <%= selectedCategory.name === 'all records' ? 'text-light bg-primary' : '' %> nav-link btn mt-3 text-capitalize"
                     type="button">
                     All Records
                 </a>
@@ -35,7 +35,7 @@
                         <a href=<%=`/category/${item._id}` %>
                             class="
                             <% if(selectedCategory._id){%>
-                                <%= selectedCategory._id.equals(item._id) ? "active" : "" %>
+                                <%= selectedCategory._id.equals(item._id) ? "text-light bg-primary" : "" %>
                                     <% }%>
                                         text-capitalize
                                         nav-link btn mt-3"
