@@ -12,6 +12,8 @@ let newItemRouter = require("./server/routes/newRecord");
 
 let detailRouter = require("./server/routes/recordDetail");
 
+let updateRecordRouter = require("./server/routes/updateRecord");
+
 var app = express();
 
 // view engine setup
@@ -28,6 +30,7 @@ app.use("/", indexRouter);
 app.use("/new-genre", newCategoryRouter);
 app.use("/new-record", newItemRouter);
 app.use("/record", detailRouter);
+app.use("/update-item", updateRecordRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
