@@ -11,7 +11,7 @@ let newCategoryRouter = require("./server/routes/newCategory");
 
 let newItemRouter = require("./server/routes/newItem");
 
-let detailRouter = require("./server/routes/detail");
+let detailRouter = require("./server/routes/itemDetail");
 
 var app = express();
 
