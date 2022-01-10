@@ -1,5 +1,5 @@
 var express = require("express");
-const itemController = require("../cotrollers/newItemController");
+const itemController = require("../controllers/recordController");
 var router = express.Router();
 
 /* GET delete a record */

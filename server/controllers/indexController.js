@@ -3,7 +3,7 @@ const Records = require("../models/Records");
 const ObjectId = require("mongodb").ObjectId;
 /**
  * Get
- * Homepage
+ * Homepage (All Records Page)
  */
 exports.homePage = async (req, res, next) => {
   try {
@@ -20,6 +20,11 @@ exports.homePage = async (req, res, next) => {
     res.status(500);
   }
 };
+
+/**
+ * Get
+ * Category Specific Page
+ */
 
 exports.catagoryPage = async (req, res, next) => {
   try {

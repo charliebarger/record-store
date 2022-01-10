@@ -1,5 +1,5 @@
 var express = require("express");
-const categoryFormController = require("../cotrollers/newCategoryController");
+const categoryFormController = require("../controllers/newCategoryController");
 var router = express.Router();
 
 /* GET update genre page with updated values. */

@@ -2,6 +2,12 @@ const getCategories = require("./getCategories");
 const Userdb = require("../models/Records");
 const { ObjectId } = require("mongodb");
 require("../models/database");
+
+/**
+ * Get
+ * New Record Form Page
+ */
+
 exports.newItemHomepage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
@@ -17,6 +23,11 @@ exports.newItemHomepage = async (req, res, next) => {
     res.status(500);
   }
 };
+
+/**
+ * Get
+ * Update Record Form Page. Populate form fields with record to be updated's information
+ */
 
 exports.updateItemPage = async (req, res, next) => {
   try {
@@ -34,6 +45,11 @@ exports.updateItemPage = async (req, res, next) => {
     res.status(500);
   }
 };
+
+/**
+ * Get
+ *  New Record Form Page. Only difference is the Category is pre popualted
+ */
 
 exports.addItemToGenre = async (req, res, next) => {
   try {
@@ -53,6 +69,11 @@ exports.addItemToGenre = async (req, res, next) => {
     res.status(500);
   }
 };
+
+/**
+ * Post
+ *  add a new Record to the DB
+ */
 
 exports.create = async (req, res) => {
   try {
@@ -76,6 +97,11 @@ exports.create = async (req, res) => {
   }
 };
 
+/**
+ * Put
+ *  update a new Record in the DB
+ */
+
 exports.updateItem = async (req, res, next) => {
   try {
     const category = await getCategories.getSelectedCategory(req.body.category);
@@ -88,6 +114,11 @@ exports.updateItem = async (req, res, next) => {
     res.redirect(`/record/${req.params.id}`);
   } catch (error) {}
 };
+
+/**
+ * Delete
+ *  delete a new Record in the DB
+ */
 
 exports.deleteItem = async (req, res, next) => {
   try {

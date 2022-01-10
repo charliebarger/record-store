@@ -1,5 +1,5 @@
 var express = require("express");
-const itemFormController = require("../cotrollers/newItemController");
+const itemFormController = require("../controllers/recordController");
 var router = express.Router();
 
 /* GET new record form page. */

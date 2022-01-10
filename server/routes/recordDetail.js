@@ -1,5 +1,5 @@
 var express = require("express");
-const indexController = require("../cotrollers/detailController");
+const indexController = require("../controllers/detailController");
 var router = express.Router();
 
 /* GET record detail page. */
