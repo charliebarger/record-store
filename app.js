@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/new-category", newCategoryRouter);
 app.use("/users", usersRouter);
-app.use("/new-category", newCategoryRouter);
 app.use("/new-item", newItemRouter);
 app.use("/item", detailRouter);
 

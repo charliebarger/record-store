@@ -2,16 +2,19 @@
     <main class=" flex-grow-1 ">
         <div class="container p-4">
             <h1>New Genre</h1>
-            <form style="max-width:450px;" action="/new-category?" method="post">
+            <form style="max-width:450px;" method="post" action=<%=selectedCategory.name=="" ? "/new-category" :
+                `/update-category/${selectedCategory._id}` %>
+                >
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Create Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" name="name"
-                        aria-describedby="emailHelp">
+                        value="<%= selectedCategory.name != ""?
+                        selectedCategory.name : '' %>" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Catagory description</label>
                     <textarea style="width: 100%" rows="3" name="description" class="form-control" name=""
-                        id=""></textarea>
+                        id=""><%= selectedCategory.name != "" ? selectedCategory.description : '' %></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -51,10 +51,11 @@
 
               <div class="d-flex  my-4">
                 <% if (selectedCategory._id ) { %>
-                  <a href=<%=`#`%> class="btn btn-outline-secondary btn-md px-4"
-                    href="#">Edit</a>
+                  <a href=<%=`/update-category/${selectedCategory._id}` %> class="btn btn-outline-secondary btn-md px-4"
+                    >Edit</a>
                   <% if (records=="" ) { %>
-                    <a class="btn  btn-md  px-4  btn-danger ms-4" href=<%=`#`%> >Delete</a>
+                    <a class="btn  btn-md  px-4  btn-danger ms-4" href=<%=`/deleteCategory/${selectedCategory._id} `%>
+                      >Delete</a>
                     <% } %>
                       <% }%>
                         <a class="btn  btn-md  px-4  btn-primary ms-auto" href=<%=`/new-item/${selectedCategory._id}` %>

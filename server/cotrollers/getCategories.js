@@ -75,3 +75,19 @@ exports.delete = async (paramId) => {
     console.log("mistake in deleteItem");
   }
 };
+
+exports.updateCategory = async (paramId, newRecord) => {
+  try {
+    await Category.findByIdAndUpdate(ObjectId(paramId), { $set: newRecord });
+  } catch (error) {
+    console.log("mistake in updateItem");
+  }
+};
+
+exports.deleteCategory = async (paramId) => {
+  try {
+    await Category.findByIdAndDelete(paramId);
+  } catch (error) {
+    console.log("mistake in deleteItem");
+  }
+};
