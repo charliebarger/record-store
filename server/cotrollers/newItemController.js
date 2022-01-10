@@ -5,7 +5,7 @@ require("../models/database");
 exports.newItemHomepage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
-    res.render("new-item", {
+    res.render("new-record", {
       title: "Record Store",
       category,
       selectedCategory: { name: "" },
@@ -22,7 +22,7 @@ exports.updateItemPage = async (req, res, next) => {
   try {
     const category = await getCategories.getCategory();
     const record = await getCategories.getRecordbyId(req.params.id);
-    res.render("new-item", {
+    res.render("new-record", {
       title: "Record Store",
       category,
       selectedCategory: { name: "" },
@@ -42,7 +42,7 @@ exports.addItemToGenre = async (req, res, next) => {
     const selectedCategory = await getCategories.getSelectedCategory(
       req.params.id
     );
-    res.render("new-item", {
+    res.render("new-record", {
       title: "Record Store",
       category,
       selectedCategory,

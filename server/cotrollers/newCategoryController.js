@@ -6,7 +6,7 @@ exports.newCategoryHomepage = async (req, res, next) => {
   try {
     console.log("hehehhehe");
     const category = await getCategories.getCategory();
-    res.render("new-category", {
+    res.render("new-genre", {
       title: "Record Store",
       category,
       selectedCategory: { name: "" },
@@ -41,7 +41,7 @@ exports.updateCategoryPage = async (req, res, next) => {
     );
     console.log(selectedCategory.description);
     console.log("hi");
-    res.render("new-category", {
+    res.render("new-genre", {
       title: "Record Store",
       category,
       selectedCategory: selectedCategory,
