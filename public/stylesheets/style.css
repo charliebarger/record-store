@@ -35,3 +35,11 @@ a:focus {
   background-color: rgb(255, 255, 255, 0.5);
   box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
+
+@media (min-width: 576px) {
+  .main-section {
+    overflow-y: scroll;
+    height: 100vh;
+    flex-basis: 50%;
+  }
+}
