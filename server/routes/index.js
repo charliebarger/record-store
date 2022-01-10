@@ -8,8 +8,6 @@ var router = express.Router();
 router.get("/", indexController.homePage);
 router.get("/category", indexController.homePage);
 router.get("/category/:id", indexController.catagoryPage);
-router.get("/update-category/:id", categoryFormController.updateCategoryPage);
-router.post("/update-category/:id", categoryFormController.updateCategory);
 router.get("/delete/:id/:categoryId", itemController.deleteItem);
 router.get("/deleteCategory/:id", categoryFormController.delete);
 
