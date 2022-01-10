@@ -24,15 +24,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Price</label>
-                    <input name="price" type="number" value="<%= record ?
+                    <input name="price" min=".01" type="number" value="<%= record ?
                         record.price : '' %>" step="0.01" style="width: 100%" required rows="3" class="form-control"
                         name="" id=""></input>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Item Quantity</label>
                     <input value="<%= record ?
-                        record.quantity : '' %>" type="number" name="quantity" style="width: 100%" required rows="3"
-                        class="form-control" name="" id=""></input>
+                        record.quantity : '' %>" type="number" name="quantity" min="1" style="width: 100%" required
+                        rows="3" class="form-control" name="" id=""></input>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Album Cover URL</label>
