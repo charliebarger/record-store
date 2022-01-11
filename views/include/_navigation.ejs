@@ -26,8 +26,7 @@
             <div class=" pb-4 pt-2 nav flex-column  px-2"
                 style="overflow-y: scroll; max-height:300px; flex-wrap: nowrap;">
                 <a href='/category'
-                    class=" <%= selectedCategory.name === 'all records' ? 'text-light bg-primary' : '' %> nav-link btn mt-3 text-capitalize"
-                    type="button">
+                    class=" <%= selectedCategory.name === 'all records' ? 'text-light bg-primary' : '' %> nav-link btn mt-3 text-capitalize">
                     All Records
                 </a>
                 <% if (category !="" ) { %>
@@ -39,7 +38,6 @@
                                     <% }%>
                                         text-capitalize
                                         nav-link btn mt-3"
-                                        type="button"
                                         >
                                         <%= item.name %>
                         </a>
