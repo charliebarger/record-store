@@ -53,7 +53,7 @@
           <% }) %>
             <% } %>
 
-              <div class="d-flex  my-4">
+              <div class="d-flex flex-wrap my-4" style="gap: 1rem">
                 <% if (selectedCategory._id ) { %>
                   <a href=<%=`/update-category/${selectedCategory._id}` %> class="btn btn-outline-secondary btn-md px-4"
                     >Edit</a>
@@ -62,8 +62,8 @@
                       >Delete</a>
                     <% } %>
                       <% }%>
-                        <a class="btn  btn-md  px-4  btn-primary ms-auto" href=<%=`/new-record/${selectedCategory._id}`
-                          %>
+                        <a class="btn  btn-md  px-4  btn-primary ms-sm-auto"
+                          href=<%=`/new-record/${selectedCategory._id}` %>
                           >New
                           Album</a>
               </div>
