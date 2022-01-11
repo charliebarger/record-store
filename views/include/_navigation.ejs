@@ -23,27 +23,31 @@
         </div>
         <span class="text-light fs-3 text-center d-block">Genres</span>
         <nav>
-            <div class=" pb-4 pt-2 nav flex-column  px-2"
+            <ul class=" pb-4 pt-2 nav flex-column  px-2"
                 style="overflow-y: scroll; max-height:300px; flex-wrap: nowrap;">
-                <a href='/category'
-                    class=" <%= selectedCategory.name === 'all records' ? 'text-light bg-primary' : '' %> nav-link btn mt-3 text-capitalize">
-                    All Records
-                </a>
+                <li class="nav-item">
+                    <a href='/category'
+                        class=" <%= selectedCategory.name === 'all records' ? 'text-light bg-primary' : '' %> nav-link btn mt-3 text-capitalize">
+                        All Records
+                    </a>
+                </li>
                 <% if (category !="" ) { %>
                     <% category.forEach((item)=> { %>
-                        <a href=<%=`/category/${item._id}` %>
-                            class="
-                            <% if(selectedCategory._id){%>
-                                <%= selectedCategory._id.equals(item._id) ? "text-light bg-primary" : "" %>
-                                    <% }%>
-                                        text-capitalize
-                                        nav-link btn mt-3"
-                                        >
-                                        <%= item.name %>
-                        </a>
+                        <li class="nav-item">
+                            <a href=<%=`/category/${item._id}` %>
+                                class="
+                                <% if(selectedCategory._id){%>
+                                    <%= selectedCategory._id.equals(item._id) ? "text-light bg-primary" : "" %>
+                                        <% }%>
+                                            text-capitalize
+                                            nav-link btn mt-3"
+                                            >
+                                            <%= item.name %>
+                            </a>
+                        </li>
                         <% }) %>
                             <% } %>
-            </div>
+            </ul>
             <div class="container d-flex  align-items-center gap-4 gap-md-3 px-0 flex-md-column">
                 <a style="width : 100%" class="btn btn-danger btn-md flex-fill px-0" href="/new-genre">New
                     Genre</a>
