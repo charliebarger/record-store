@@ -41,7 +41,10 @@
               <div class="col-md-4 d-flex p-3 align-items-center">
                 <a class="text-decoration-none text-dark square-container" href=<%=`/record/${item._id}` %>>
                   <div class="square-img">
-                    <img class="album-image" src=<%=item.image %> alt=<%=item.albumName%>>
+                    <img class="album-image" src=<%=item.image%>
+                    onerror="this.onerror=null;this.src='https://community.atlassian.com/t5/image/serverpage/image-id/127481i2A3E643B5F41B152?v=v2';this.alt
+                    = 'No Album Cover Available'"
+                    alt=<%=item.albumName%>>
                   </div>
                 </a>
               </div>
