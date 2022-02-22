@@ -28,7 +28,7 @@ exports.newCategoryHomepage = async (req, res, next) => {
 exports.create = async (req, res) => {
   try {
     //new user
-    const user = await new Userdb({
+    const user = new Userdb({
       name: req.body.name,
       description: req.body.description,
     });
