@@ -2,7 +2,7 @@
 
 ## Description
 
-Online Record Store that allows users view, create, and Genres and Albums 
+Online Record Store that allows users view, create, and delete genres and albums 
 
 > See it Live at [https://whispering-wildwood-65523.herokuapp.com/](https://whispering-wildwood-65523.herokuapp.com/)
 
